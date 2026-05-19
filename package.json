@@ -1,0 +1,22 @@
+{
+  "name": "ai-web-test-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-assisted web automation testing agent for Playwright and Cypress.",
+  "type": "module",
+  "scripts": {
+    "agent": "node src/agent.js",
+    "chat": "node src/server.js",
+    "start": "node src/server.js",
+    "test:playwright": "playwright test",
+    "test:cypress": "cypress run",
+    "install:browsers": "playwright install chromium"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.44.0",
+    "cypress": "^13.10.0",
+    "dotenv": "^16.4.5",
+    "openai": "^4.47.1"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,9 @@
+node_modules
+reports
+generated
+test-results
+cypress/videos
+cypress/screenshots
+.env
+.git
+npm-debug.log

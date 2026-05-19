@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: ai-web-test-agent
+    env: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4173

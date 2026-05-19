@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Test Agent</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="app">
+    <aside class="sidebar">
+      <div>
+        <div class="brand">AI Test Agent</div>
+        <div class="status" id="status">Ready</div>
+      </div>
+      <div class="stats">
+        <div><span id="bugCount">0</span><label>Bugs</label></div>
+        <div><span id="testCount">0</span><label>Tests</label></div>
+      </div>
+    </aside>
+
+    <section class="chat">
+      <div class="messages" id="messages">
+        <article class="message assistant">
+          <div class="avatar">AI</div>
+          <div class="bubble">Send a website URL and I will generate Playwright and Cypress tests, run them, and report bugs.</div>
+        </article>
+      </div>
+
+      <form class="composer" id="chatForm">
+        <textarea id="messageInput" rows="1" placeholder="Test https://example.com"></textarea>
+        <button type="submit" id="sendButton" aria-label="Send">Send</button>
+      </form>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
