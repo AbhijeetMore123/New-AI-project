@@ -32,6 +32,22 @@
         <button type="submit" id="sendButton" aria-label="Send">Send</button>
       </form>
     </section>
+
+    <aside class="preview" id="previewPanel" aria-label="Result preview">
+      <div class="previewHeader">
+        <div>
+          <div class="previewKicker">Preview</div>
+          <h2 id="previewTitle">Report</h2>
+        </div>
+        <button class="ghostButton" type="button" id="closePreview">Close</button>
+      </div>
+      <div class="previewBody" id="previewBody">
+        <div class="emptyState">
+          <strong>No report selected</strong>
+          <span>Run a test and use the result buttons to view reports, generated tests, or details.</span>
+        </div>
+      </div>
+    </aside>
   </main>
   <script src="/app.js"></script>
 </body>

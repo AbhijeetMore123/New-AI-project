@@ -16,7 +16,7 @@ body {
 
 .app {
   display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
+  grid-template-columns: 280px minmax(0, 1fr) minmax(360px, 34vw);
   min-height: 100vh;
 }
 
@@ -124,6 +124,177 @@ body {
   overflow-wrap: anywhere;
 }
 
+.resultCard {
+  align-self: start;
+  display: grid;
+  gap: 12px;
+  border: 1px solid #dfe6ed;
+  border-radius: 8px;
+  padding: 16px;
+  background: white;
+}
+
+.resultTopline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.resultTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.pill {
+  border-radius: 999px;
+  padding: 5px 10px;
+  background: #e8f3f4;
+  color: #155e63;
+  font-size: 12px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.resultMeta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.metric {
+  border: 1px solid #e5ebf0;
+  border-radius: 8px;
+  padding: 10px;
+  background: #f8fafb;
+}
+
+.metric span {
+  display: block;
+  color: #536878;
+  font-size: 12px;
+}
+
+.metric strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 18px;
+}
+
+.bugList {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.bugList li {
+  margin: 4px 0;
+}
+
+.bubbleNote {
+  color: #52616b;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.actionButton,
+.ghostButton {
+  min-height: 38px;
+  border: 1px solid #cbd6df;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: white;
+  color: #17384a;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.actionButton.primary {
+  border-color: #1f6f8b;
+  background: #1f6f8b;
+  color: white;
+}
+
+.ghostButton {
+  min-height: 34px;
+  background: #f8fafb;
+}
+
+.preview {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-width: 0;
+  border-left: 1px solid #dfe6ed;
+  background: #ffffff;
+}
+
+.previewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px;
+  border-bottom: 1px solid #dfe6ed;
+}
+
+.previewKicker {
+  color: #66788a;
+  font-size: 12px;
+  font-weight: 750;
+  text-transform: uppercase;
+}
+
+.preview h2 {
+  margin: 3px 0 0;
+  font-size: 20px;
+  letter-spacing: 0;
+}
+
+.previewBody {
+  min-height: 0;
+  overflow: auto;
+}
+
+.previewFrame {
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - 82px);
+  border: 0;
+}
+
+.codePreview,
+.detailsPreview {
+  margin: 0;
+  padding: 20px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: "Cascadia Code", Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.detailsPreview {
+  font-family: inherit;
+}
+
+.emptyState {
+  display: grid;
+  place-content: center;
+  gap: 8px;
+  min-height: 100%;
+  padding: 28px;
+  color: #52616b;
+  text-align: center;
+}
+
+.emptyState strong {
+  color: #17202a;
+}
+
 .composer {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 96px;
@@ -204,5 +375,38 @@ button:disabled {
 
   button {
     height: 44px;
+  }
+
+  .preview {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    transform: translateX(100%);
+    transition: transform 180ms ease;
+    z-index: 10;
+  }
+
+  .preview.open {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 1160px) and (min-width: 761px) {
+  .app {
+    grid-template-columns: 240px minmax(0, 1fr);
+  }
+
+  .preview {
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: min(520px, 92vw);
+    box-shadow: -16px 0 32px rgba(15, 23, 42, 0.18);
+    transform: translateX(100%);
+    transition: transform 180ms ease;
+    z-index: 10;
+  }
+
+  .preview.open {
+    transform: translateX(0);
   }
 }
